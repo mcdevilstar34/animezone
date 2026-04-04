@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ebook — AnimeZone</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg az-navbar">
+    <div class="container">
+      <a class="navbar-brand az-navbar-brand" href="index.html">
+        <div class="az-logo-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+        ANIME<span class="az-logo-accent">ZONE</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-expanded="false">
+        <span class="navbar-toggler-icon">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="video.html">VIDEO</a></li>
+          <li class="nav-item"><a class="nav-link" href="musik.html">MUSIK</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
+          <li class="nav-item"><a class="nav-link" href="ebook.html">EBOOK</a></li>
+          <li class="nav-item"><a class="nav-link" href="tentang.html">TENTANG</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="az-page-hero" data-title="EBOOK">
+    <div class="container">
+      <div class="az-breadcrumb mb-2">
+        <a href="index.html">HOME</a>
+        <i class="bi bi-chevron-right" style="font-size:0.5rem;"></i>
+        <span>EBOOK</span>
+      </div>
+      <h1 class="az-page-title">ANIME <span style="color:var(--accent);">EBOOK</span></h1>
+      <p style="color:var(--gray-400); font-size:0.9rem; margin-top:0.5rem; font-family:var(--font-mono); letter-spacing:2px;">MANGA & ARTBOOK — GRATIS DOWNLOAD PDF</p>
+    </div>
+  </div>
+
+  <!-- SEARCH + FILTER -->
+  <div style="background:var(--gray-900); border-bottom:1px solid var(--gray-800); padding:1rem 0;">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-md-6">
+          <div style="position:relative;">
+            <input type="text" id="ebookSearch" placeholder="Cari judul manga..." style="width:100%; background:var(--gray-800); border:1px solid var(--gray-700); color:var(--white); padding:10px 16px 10px 44px; font-family:var(--font-mono); font-size:0.8rem; letter-spacing:2px; outline:none;" />
+            <i class="bi bi-search" style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:var(--gray-400);"></i>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="az-gallery-filter mb-0">
+            <button class="az-filter-btn active" data-genre="all">SEMUA</button>
+            <button class="az-filter-btn" data-genre="shonen">SHONEN</button>
+            <button class="az-filter-btn" data-genre="seinen">SEINEN</button>
+            <button class="az-filter-btn" data-genre="artbook">ARTBOOK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EBOOK LIST -->
+  <section class="az-section">
+    <div class="container">
+
+      <!-- Stats -->
+      <div class="row g-3 mb-5 fade-in">
+        <div class="col-4">
+          <div style="background:var(--gray-900); border:1px solid var(--gray-800); padding:1.5rem; text-align:center;">
+            <div style="font-family:var(--font-display); font-size:2.5rem; color:var(--accent); line-height:1;">128</div>
+            <div style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:3px; color:var(--gray-400);">TOTAL EBOOK</div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div style="background:var(--gray-900); border:1px solid var(--gray-800); padding:1.5rem; text-align:center;">
+            <div style="font-family:var(--font-display); font-size:2.5rem; color:var(--accent); line-height:1;">FREE</div>
+            <div style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:3px; color:var(--gray-400);">GRATIS DOWNLOAD</div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div style="background:var(--gray-900); border:1px solid var(--gray-800); padding:1.5rem; text-align:center;">
+            <div style="font-family:var(--font-display); font-size:2.5rem; color:var(--accent); line-height:1;">PDF</div>
+            <div style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:3px; color:var(--gray-400);">FORMAT FILE</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="ebook-list">
+
+        <!-- EBOOK 1 -->
+        <div class="az-ebook-card fade-in" data-genre="shonen" data-title="attack on titan">
+          <img class="az-ebook-cover" src="https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=200&q=80" alt="AoT" />
+          <div class="az-ebook-info">
+            <div class="az-ebook-title">ATTACK ON TITAN — Vol. 1</div>
+            <div class="az-ebook-author">HAJIME ISAYAMA</div>
+            <p class="az-ebook-desc">Chapter pertama dari manga epik yang mengisahkan perjuangan umat manusia melawan titans raksasa yang mengincar keberadaan mereka.</p>
+            <div class="az-ebook-tags">
+              <span class="az-ebook-tag">SHONEN</span>
+              <span class="az-ebook-tag">ACTION</span>
+              <span class="az-ebook-tag">DARK FANTASY</span>
+              <span class="az-ebook-tag">193 HAL</span>
+            </div>
+            <a href="#" class="az-btn-download" onclick="fakeDownload(this, event)">
+              <i class="bi bi-download"></i> DOWNLOAD PDF
+            </a>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; flex-shrink:0;">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; color:var(--gray-600); letter-spacing:2px; text-align:right;">
+              <div><i class="bi bi-file-earmark-pdf" style="color:var(--accent2);"></i> 24.5 MB</div>
+              <div class="mt-1"><i class="bi bi-download"></i> 84,203</div>
+            </div>
+            <div style="background:var(--accent); color:var(--black); font-family:var(--font-mono); font-size:0.55rem; padding:3px 8px; letter-spacing:2px;">FREE</div>
+          </div>
+        </div>
+
+        <!-- EBOOK 2 -->
+        <div class="az-ebook-card fade-in fade-in-delay-1" data-genre="seinen" data-title="berserk">
+          <img class="az-ebook-cover" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=200&q=80" alt="Berserk" />
+          <div class="az-ebook-info">
+            <div class="az-ebook-title">BERSERK — Vol. 1</div>
+            <div class="az-ebook-author">KENTARO MIURA</div>
+            <p class="az-ebook-desc">Kisah Guts, seorang prajurit berambut hitam yang memikul pedang raksasa dalam perjalanannya membalas dendam kepada Griffith.</p>
+            <div class="az-ebook-tags">
+              <span class="az-ebook-tag">SEINEN</span>
+              <span class="az-ebook-tag">DARK FANTASY</span>
+              <span class="az-ebook-tag">GORE</span>
+              <span class="az-ebook-tag">224 HAL</span>
+            </div>
+            <a href="#" class="az-btn-download" onclick="fakeDownload(this, event)">
+              <i class="bi bi-download"></i> DOWNLOAD PDF
+            </a>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; flex-shrink:0;">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; color:var(--gray-600); letter-spacing:2px; text-align:right;">
+              <div><i class="bi bi-file-earmark-pdf" style="color:var(--accent2);"></i> 31.2 MB</div>
+              <div class="mt-1"><i class="bi bi-download"></i> 62,891</div>
+            </div>
+            <div style="background:var(--accent); color:var(--black); font-family:var(--font-mono); font-size:0.55rem; padding:3px 8px; letter-spacing:2px;">FREE</div>
+          </div>
+        </div>
+
+        <!-- EBOOK 3 -->
+        <div class="az-ebook-card fade-in fade-in-delay-2" data-genre="shonen" data-title="one piece">
+          <img class="az-ebook-cover" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=200&q=80" alt="One Piece" />
+          <div class="az-ebook-info">
+            <div class="az-ebook-title">ONE PIECE — Vol. 1</div>
+            <div class="az-ebook-author">EIICHIRO ODA</div>
+            <p class="az-ebook-desc">Petualangan Monkey D. Luffy yang bermimpi menjadi Raja Bajak Laut dengan mencari harta legendaris One Piece dimulai dari sini.</p>
+            <div class="az-ebook-tags">
+              <span class="az-ebook-tag">SHONEN</span>
+              <span class="az-ebook-tag">ADVENTURE</span>
+              <span class="az-ebook-tag">COMEDY</span>
+              <span class="az-ebook-tag">212 HAL</span>
+            </div>
+            <a href="#" class="az-btn-download" onclick="fakeDownload(this, event)">
+              <i class="bi bi-download"></i> DOWNLOAD PDF
+            </a>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; flex-shrink:0;">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; color:var(--gray-600); letter-spacing:2px; text-align:right;">
+              <div><i class="bi bi-file-earmark-pdf" style="color:var(--accent2);"></i> 18.7 MB</div>
+              <div class="mt-1"><i class="bi bi-download"></i> 120,445</div>
+            </div>
+            <div style="background:var(--accent); color:var(--black); font-family:var(--font-mono); font-size:0.55rem; padding:3px 8px; letter-spacing:2px;">FREE</div>
+          </div>
+        </div>
+
+        <!-- EBOOK 4 - ARTBOOK -->
+        <div class="az-ebook-card fade-in" data-genre="artbook" data-title="demon slayer artbook">
+          <img class="az-ebook-cover" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=80" alt="Artbook" />
+          <div class="az-ebook-info">
+            <div class="az-ebook-title">DEMON SLAYER — Official Artbook</div>
+            <div class="az-ebook-author">KOYOHARU GOTOUGE</div>
+            <p class="az-ebook-desc">Koleksi artbook resmi Demon Slayer dengan ilustrasi karakter lengkap, konsep art, dan komentar dari sang mangaka.</p>
+            <div class="az-ebook-tags">
+              <span class="az-ebook-tag">ARTBOOK</span>
+              <span class="az-ebook-tag">FULL COLOR</span>
+              <span class="az-ebook-tag">176 HAL</span>
+            </div>
+            <a href="#" class="az-btn-download" onclick="fakeDownload(this, event)">
+              <i class="bi bi-download"></i> DOWNLOAD PDF
+            </a>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; flex-shrink:0;">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; color:var(--gray-600); letter-spacing:2px; text-align:right;">
+              <div><i class="bi bi-file-earmark-pdf" style="color:var(--accent2);"></i> 89.4 MB</div>
+              <div class="mt-1"><i class="bi bi-download"></i> 47,312</div>
+            </div>
+            <div style="background:var(--accent); color:var(--black); font-family:var(--font-mono); font-size:0.55rem; padding:3px 8px; letter-spacing:2px;">FREE</div>
+          </div>
+        </div>
+
+        <!-- EBOOK 5 -->
+        <div class="az-ebook-card fade-in fade-in-delay-1" data-genre="seinen" data-title="vagabond">
+          <img class="az-ebook-cover" src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=200&q=80" alt="Vagabond" />
+          <div class="az-ebook-info">
+            <div class="az-ebook-title">VAGABOND — Vol. 1</div>
+            <div class="az-ebook-author">TAKEHIKO INOUE</div>
+            <p class="az-ebook-desc">Kisah Miyamoto Musashi, petarung paling kuat di Jepang, dalam perjalanan spiritualnya mencari makna sejati dari kekuatan.</p>
+            <div class="az-ebook-tags">
+              <span class="az-ebook-tag">SEINEN</span>
+              <span class="az-ebook-tag">SAMURAI</span>
+              <span class="az-ebook-tag">HISTORICAL</span>
+              <span class="az-ebook-tag">208 HAL</span>
+            </div>
+            <a href="#" class="az-btn-download" onclick="fakeDownload(this, event)">
+              <i class="bi bi-download"></i> DOWNLOAD PDF
+            </a>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; flex-shrink:0;">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; color:var(--gray-600); letter-spacing:2px; text-align:right;">
+              <div><i class="bi bi-file-earmark-pdf" style="color:var(--accent2);"></i> 28.1 MB</div>
+              <div class="mt-1"><i class="bi bi-download"></i> 38,772</div>
+            </div>
+            <div style="background:var(--accent); color:var(--black); font-family:var(--font-mono); font-size:0.55rem; padding:3px 8px; letter-spacing:2px;">FREE</div>
+          </div>
+        </div>
+
+        <!-- EBOOK 6 -->
+        <div class="az-ebook-card fade-in fade-in-delay-2" data-genre="shonen" data-title="naruto">
+          <img class="az-ebook-cover" src="https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?w=200&q=80" alt="Naruto" />
+          <div class="az-ebook-info">
+            <div class="az-ebook-title">NARUTO — Vol. 1</div>
+            <div class="az-ebook-author">MASASHI KISHIMOTO</div>
+            <p class="az-ebook-desc">Kisah Naruto Uzumaki, ninja muda yatim piatu yang bermimpi menjadi Hokage terkuat di Konoha, desa tempat tinggalnya.</p>
+            <div class="az-ebook-tags">
+              <span class="az-ebook-tag">SHONEN</span>
+              <span class="az-ebook-tag">NINJA</span>
+              <span class="az-ebook-tag">ADVENTURE</span>
+              <span class="az-ebook-tag">186 HAL</span>
+            </div>
+            <a href="#" class="az-btn-download" onclick="fakeDownload(this, event)">
+              <i class="bi bi-download"></i> DOWNLOAD PDF
+            </a>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; flex-shrink:0;">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; color:var(--gray-600); letter-spacing:2px; text-align:right;">
+              <div><i class="bi bi-file-earmark-pdf" style="color:var(--accent2);"></i> 22.8 MB</div>
+              <div class="mt-1"><i class="bi bi-download"></i> 95,601</div>
+            </div>
+            <div style="background:var(--accent); color:var(--black); font-family:var(--font-mono); font-size:0.55rem; padding:3px 8px; letter-spacing:2px;">FREE</div>
+          </div>
+        </div>
+
+        <!-- EBOOK 7 -->
+        <div class="az-ebook-card fade-in" data-genre="artbook" data-title="studio ghibli artbook">
+          <img class="az-ebook-cover" src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=200&q=80" alt="Ghibli" />
+          <div class="az-ebook-info">
+            <div class="az-ebook-title">GHIBLI — The Art of Spirited Away</div>
+            <div class="az-ebook-author">STUDIO GHIBLI</div>
+            <p class="az-ebook-desc">Artbook resmi film legendaris Spirited Away karya Hayao Miyazaki. Berisi konsep art, storyboard, dan catatan produksi.</p>
+            <div class="az-ebook-tags">
+              <span class="az-ebook-tag">ARTBOOK</span>
+              <span class="az-ebook-tag">GHIBLI</span>
+              <span class="az-ebook-tag">FULL COLOR</span>
+              <span class="az-ebook-tag">256 HAL</span>
+            </div>
+            <a href="#" class="az-btn-download" onclick="fakeDownload(this, event)">
+              <i class="bi bi-download"></i> DOWNLOAD PDF
+            </a>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem; flex-shrink:0;">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; color:var(--gray-600); letter-spacing:2px; text-align:right;">
+              <div><i class="bi bi-file-earmark-pdf" style="color:var(--accent2);"></i> 112 MB</div>
+              <div class="mt-1"><i class="bi bi-download"></i> 156,220</div>
+            </div>
+            <div style="background:var(--accent); color:var(--black); font-family:var(--font-mono); font-size:0.55rem; padding:3px 8px; letter-spacing:2px;">FREE</div>
+          </div>
+        </div>
+
+      </div><!-- /ebook-list -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="az-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="az-footer-brand">ANIME<span>ZONE</span></div>
+          <p class="az-footer-desc">Portal hiburan anime dan manga terlengkap di Indonesia.</p>
+          <div class="az-footer-social">
+            <a href="#" class="az-social-link"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="az-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="az-social-link"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="az-social-link"><i class="bi bi-discord"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <span class="az-footer-heading">NAVIGASI</span>
+          <ul class="az-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="musik.html">Musik</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="ebook.html">Ebook</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="az-footer-bottom">
+        <span class="az-footer-copy">© 2024 ANIMEZONE — ALL RIGHTS RESERVED</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Genre filter
+    document.querySelectorAll('[data-genre]').forEach(btn => {
+      if (!btn.matches('.az-filter-btn')) return;
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('[data-genre].az-filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const g = this.dataset.genre;
+        document.querySelectorAll('#ebook-list .az-ebook-card').forEach(card => {
+          card.style.display = (g === 'all' || card.dataset.genre === g) ? 'flex' : 'none';
+        });
+      });
+    });
+
+    // Search
+    document.getElementById('ebookSearch').addEventListener('input', function () {
+      const q = this.value.toLowerCase();
+      document.querySelectorAll('#ebook-list .az-ebook-card').forEach(card => {
+        card.style.display = card.dataset.title.includes(q) ? 'flex' : 'none';
+      });
+    });
+
+    // Fake download feedback
+    function fakeDownload(btn, e) {
+      e.preventDefault();
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<i class="bi bi-check-circle-fill"></i> SEDANG DIUNDUH...';
+      btn.style.opacity = '0.7';
+      setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.style.opacity = '';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

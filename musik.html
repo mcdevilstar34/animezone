@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Musik — AnimeZone</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg az-navbar">
+    <div class="container">
+      <a class="navbar-brand az-navbar-brand" href="index.html">
+        <div class="az-logo-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+        ANIME<span class="az-logo-accent">ZONE</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-expanded="false">
+        <span class="navbar-toggler-icon">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="video.html">VIDEO</a></li>
+          <li class="nav-item"><a class="nav-link" href="musik.html">MUSIK</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
+          <li class="nav-item"><a class="nav-link" href="ebook.html">EBOOK</a></li>
+          <li class="nav-item"><a class="nav-link" href="tentang.html">TENTANG</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="az-page-hero" data-title="MUSIK">
+    <div class="container">
+      <div class="az-breadcrumb mb-2">
+        <a href="index.html">HOME</a>
+        <i class="bi bi-chevron-right" style="font-size: 0.5rem;"></i>
+        <span>MUSIK</span>
+      </div>
+      <h1 class="az-page-title">ANIME <span style="color: var(--accent);">MUSIK</span></h1>
+      <p style="color: var(--gray-400); font-size: 0.9rem; margin-top: 0.5rem; font-family: var(--font-mono); letter-spacing: 2px;">OST & OPENING — KOLEKSI AUDIO TERBAIK</p>
+    </div>
+  </div>
+
+  <!-- AUDIO ELEMENT (hidden) -->
+  <audio id="az-audio" preload="none"></audio>
+
+  <!-- MAIN CONTENT -->
+  <section class="az-section">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- ---- PLAYER ---- -->
+        <div class="col-lg-4">
+          <div class="az-player-main fade-in">
+            <!-- Visualizer dots -->
+            <div class="mb-3 d-flex gap-1 align-items-end" style="height: 40px;" id="az-visualizer">
+              <div class="viz-bar" style="width:4px; background: var(--accent); border-radius: 2px; height: 10px; animation: vizAnim 0.8s ease infinite;"></div>
+              <div class="viz-bar" style="width:4px; background: var(--accent); border-radius: 2px; height: 22px; animation: vizAnim 0.9s ease 0.1s infinite;"></div>
+              <div class="viz-bar" style="width:4px; background: var(--accent); border-radius: 2px; height: 32px; animation: vizAnim 0.7s ease 0.2s infinite;"></div>
+              <div class="viz-bar" style="width:4px; background: var(--accent); border-radius: 2px; height: 18px; animation: vizAnim 1.0s ease 0.15s infinite;"></div>
+              <div class="viz-bar" style="width:4px; background: var(--accent); border-radius: 2px; height: 28px; animation: vizAnim 0.85s ease 0.3s infinite;"></div>
+              <div class="viz-bar" style="width:4px; background: var(--accent); border-radius: 2px; height: 14px; animation: vizAnim 0.75s ease 0.05s infinite;"></div>
+              <div class="viz-bar" style="width:4px; background: var(--accent); border-radius: 2px; height: 36px; animation: vizAnim 0.95s ease 0.25s infinite;"></div>
+              <div class="viz-bar" style="width:4px; background: var(--accent); border-radius: 2px; height: 20px; animation: vizAnim 0.8s ease 0.35s infinite;"></div>
+              <span style="font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 3px; color: var(--gray-600); margin-left: 8px; align-self: center;">NOW PLAYING</span>
+            </div>
+
+            <img id="az-cover" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&q=80" alt="Cover" class="az-player-cover" />
+
+            <div class="az-player-track-title" id="az-track-title">GURENGE</div>
+            <div class="az-player-track-artist" id="az-track-artist">LISA — DEMON SLAYER OP1</div>
+
+            <!-- Progress -->
+            <div class="az-progress-container" id="az-progress-container">
+              <div class="az-progress-bar" id="az-progress"></div>
+            </div>
+            <div class="az-time-display">
+              <span id="az-current-time">0:00</span>
+              <span id="az-total-time">0:00</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="az-player-controls">
+              <button class="az-ctrl-btn" id="az-shuffle" title="Shuffle"><i class="bi bi-shuffle"></i></button>
+              <button class="az-ctrl-btn" id="az-prev"><i class="bi bi-skip-start-fill"></i></button>
+              <button class="az-ctrl-btn play-pause" id="az-play-pause"><i class="bi bi-play-fill"></i></button>
+              <button class="az-ctrl-btn" id="az-next"><i class="bi bi-skip-end-fill"></i></button>
+              <button class="az-ctrl-btn" id="az-repeat" title="Repeat"><i class="bi bi-repeat"></i></button>
+            </div>
+
+            <!-- Volume -->
+            <div class="az-volume-control">
+              <i class="bi bi-volume-down" style="color: var(--gray-400);"></i>
+              <input type="range" class="az-volume-slider" id="az-volume" min="0" max="1" step="0.01" value="0.8" />
+              <i class="bi bi-volume-up" style="color: var(--gray-400);"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- TRACK LIST ---- -->
+        <div class="col-lg-8">
+          <div class="az-section-header fade-in">
+            <span class="az-section-tag">// PLAYLIST</span>
+            <h2 class="az-section-title">KOLEKSI <span class="outline">OST</span></h2>
+            <div class="az-section-divider"></div>
+          </div>
+
+          <ul class="az-track-list fade-in" id="az-track-list">
+            <!-- Tracks pakai file audio sample bebas-pakai dari file CDN -->
+            <li class="az-track-item"
+              data-src="https://raw.githubusercontent.com/mcdevilstar34/musik/main/f1.mp3"
+              data-title="GURENGE"
+              data-artist="LiSA — Demon Slayer OP1"
+              data-cover="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200&q=80">
+              <span class="az-track-num">01</span>
+              <img class="az-track-thumb" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200&q=80" alt="cover" />
+              <div class="az-track-info">
+                <div class="az-track-name">GURENGE</div>
+                <div class="az-track-artist">LiSA — Demon Slayer OP1</div>
+              </div>
+              <span class="az-card-badge">OP</span>
+              <span class="az-track-duration">3:42</span>
+            </li>
+
+            <li class="az-track-item"
+              data-src="https://raw.githubusercontent.com/mcdevilstar34/musik/main/naruto.mp3"
+              data-title="SHINZOU WO SASAGEYO"
+              data-artist="Linked Horizon — AoT OP2"
+              data-cover="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=200&q=80">
+              <span class="az-track-num">02</span>
+              <img class="az-track-thumb" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=200&q=80" alt="cover" />
+              <div class="az-track-info">
+                <div class="az-track-name">SHINZOU WO SASAGEYO</div>
+                <div class="az-track-artist">Linked Horizon — AoT OP2</div>
+              </div>
+              <span class="az-card-badge">OP</span>
+              <span class="az-track-duration">4:12</span>
+            </li>
+
+            <li class="az-track-item"
+              data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+              data-title="UNRAVEL"
+              data-artist="TK — Tokyo Ghoul OP"
+              data-cover="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&q=80">
+              <span class="az-track-num">03</span>
+              <img class="az-track-thumb" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=200&q=80" alt="cover" />
+              <div class="az-track-info">
+                <div class="az-track-name">UNRAVEL</div>
+                <div class="az-track-artist">TK — Tokyo Ghoul OP</div>
+              </div>
+              <span class="az-card-badge">OP</span>
+              <span class="az-track-duration">3:58</span>
+            </li>
+
+            <li class="az-track-item"
+              data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+              data-title="AGAIN"
+              data-artist="YUI — FMA Brotherhood OP1"
+              data-cover="https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=200&q=80">
+              <span class="az-track-num">04</span>
+              <img class="az-track-thumb" src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=200&q=80" alt="cover" />
+              <div class="az-track-info">
+                <div class="az-track-name">AGAIN</div>
+                <div class="az-track-artist">YUI — FMA Brotherhood OP1</div>
+              </div>
+              <span class="az-card-badge">OP</span>
+              <span class="az-track-duration">4:30</span>
+            </li>
+
+            <li class="az-track-item"
+              data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+              data-title="BLUE BIRD"
+              data-artist="Ikimono Gakari — Naruto OP3"
+              data-cover="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=200&q=80">
+              <span class="az-track-num">05</span>
+              <img class="az-track-thumb" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=200&q=80" alt="cover" />
+              <div class="az-track-info">
+                <div class="az-track-name">BLUE BIRD</div>
+                <div class="az-track-artist">Ikimono Gakari — Naruto OP3</div>
+              </div>
+              <span class="az-card-badge">OP</span>
+              <span class="az-track-duration">3:51</span>
+            </li>
+
+            <li class="az-track-item"
+              data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+              data-title="YOU SAY RUN"
+              data-artist="Yuki Hayashi — MHA OST"
+              data-cover="https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?w=200&q=80">
+              <span class="az-track-num">06</span>
+              <img class="az-track-thumb" src="https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?w=200&q=80" alt="cover" />
+              <div class="az-track-info">
+                <div class="az-track-name">YOU SAY RUN</div>
+                <div class="az-track-artist">Yuki Hayashi — MHA OST</div>
+              </div>
+              <span class="az-card-badge">OST</span>
+              <span class="az-track-duration">2:44</span>
+            </li>
+
+            <li class="az-track-item"
+              data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
+              data-title="AWAY"
+              data-artist="Hiroyuki Sawano — AoT OST"
+              data-cover="https://images.unsplash.com/photo-1478147427282-58a87a433b70?w=200&q=80">
+              <span class="az-track-num">07</span>
+              <img class="az-track-thumb" src="https://images.unsplash.com/photo-1478147427282-58a87a433b70?w=200&q=80" alt="cover" />
+              <div class="az-track-info">
+                <div class="az-track-name">AWAY</div>
+                <div class="az-track-artist">Hiroyuki Sawano — AoT OST</div>
+              </div>
+              <span class="az-card-badge">OST</span>
+              <span class="az-track-duration">3:20</span>
+            </li>
+
+            <li class="az-track-item"
+              data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
+              data-title="SILHOUETTE"
+              data-artist="KANA-BOON — Naruto Shippuden OP16"
+              data-cover="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200&q=80">
+              <span class="az-track-num">08</span>
+              <img class="az-track-thumb" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200&q=80" alt="cover" />
+              <div class="az-track-info">
+                <div class="az-track-name">SILHOUETTE</div>
+                <div class="az-track-artist">KANA-BOON — Naruto Shippuden OP16</div>
+              </div>
+              <span class="az-card-badge">OP</span>
+              <span class="az-track-duration">3:35</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="az-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="az-footer-brand">ANIME<span>ZONE</span></div>
+          <p class="az-footer-desc">Portal hiburan anime dan manga terlengkap di Indonesia.</p>
+          <div class="az-footer-social">
+            <a href="#" class="az-social-link"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="az-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="az-social-link"><i class="bi bi-youtube"></i></a>
+            <a href="https://github.com/mcdevilstar34/musik" class="az-social-link"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <span class="az-footer-heading">NAVIGASI</span>
+          <ul class="az-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="musik.html">Musik</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="ebook.html">Ebook</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="az-footer-bottom">
+        <span class="az-footer-copy">© 2024 ANIMEZONE — ALL RIGHTS RESERVED</span>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @keyframes vizAnim {
+      0%, 100% { transform: scaleY(0.4); }
+      50% { transform: scaleY(1); }
+    }
+  </style>
+
+
+  <!-- Scroll to Top -->
+  <button id="az-scroll-top" title="Ke Atas"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

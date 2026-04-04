@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — AnimeZone</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg az-navbar">
+    <div class="container">
+      <a class="navbar-brand az-navbar-brand" href="index.html">
+        <div class="az-logo-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+        ANIME<span class="az-logo-accent">ZONE</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-expanded="false">
+        <span class="navbar-toggler-icon">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="video.html">VIDEO</a></li>
+          <li class="nav-item"><a class="nav-link" href="musik.html">MUSIK</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
+          <li class="nav-item"><a class="nav-link" href="ebook.html">EBOOK</a></li>
+          <li class="nav-item"><a class="nav-link" href="tentang.html">TENTANG</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="az-page-hero" data-title="GALLERY">
+    <div class="container">
+      <div class="az-breadcrumb mb-2">
+        <a href="index.html">HOME</a>
+        <i class="bi bi-chevron-right" style="font-size:0.5rem;"></i>
+        <span>GALLERY</span>
+      </div>
+      <h1 class="az-page-title">ANIME <span style="color:var(--accent);">GALLERY</span></h1>
+      <p style="color:var(--gray-400); font-size:0.9rem; margin-top:0.5rem; font-family:var(--font-mono); letter-spacing:2px;">ARTWORK & WALLPAPER — KOLEKSI VISUAL</p>
+    </div>
+  </div>
+
+  <!-- FILTER -->
+  <div style="background:var(--gray-900); border-bottom:1px solid var(--gray-800); padding:1rem 0;">
+    <div class="container">
+      <div class="az-gallery-filter">
+        <button class="az-filter-btn active" data-filter="all">SEMUA</button>
+        <button class="az-filter-btn" data-filter="action">ACTION</button>
+        <button class="az-filter-btn" data-filter="romance">ROMANCE</button>
+        <button class="az-filter-btn" data-filter="fantasy">FANTASY</button>
+        <button class="az-filter-btn" data-filter="landscape">LANDSCAPE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="az-section">
+    <div class="container">
+      <div class="az-gallery-grid" id="gallery-grid">
+
+        <div class="az-gallery-item fade-in" data-category="action">
+          <img src="https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=600&q=80" alt="Attack on Titan" loading="lazy" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">ATTACK ON TITAN</div>
+              <span class="az-tag">ACTION</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-gallery-item fade-in fade-in-delay-1" data-category="landscape">
+          <img src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?w=600&q=80" alt="Neon City" loading="lazy" style="height:300px; object-fit:cover;" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">NEON CITY</div>
+              <span class="az-tag">LANDSCAPE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-gallery-item fade-in fade-in-delay-2" data-category="fantasy">
+          <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&q=80" alt="Fantasy" loading="lazy" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">FANTASY REALM</div>
+              <span class="az-tag">FANTASY</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-gallery-item fade-in" data-category="action">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80" alt="Code" loading="lazy" style="height:250px; object-fit:cover;" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">DEATH NOTE</div>
+              <span class="az-tag">THRILLER</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-gallery-item fade-in fade-in-delay-1" data-category="landscape">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" alt="Forest" loading="lazy" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">SHINOBI FOREST</div>
+              <span class="az-tag">LANDSCAPE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-gallery-item fade-in fade-in-delay-2" data-category="romance">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Romance" loading="lazy" style="height: 320px; object-fit:cover;" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">YOUR LIE IN APRIL</div>
+              <span class="az-tag">ROMANCE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-gallery-item fade-in" data-category="action">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Action" loading="lazy" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">DEMON SLAYER</div>
+              <span class="az-tag">ACTION</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-gallery-item fade-in fade-in-delay-1" data-category="fantasy">
+          <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600&q=80" alt="Sky" loading="lazy" style="height:280px; object-fit:cover;" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">HOWL'S MOVING</div>
+              <span class="az-tag">FANTASY</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-gallery-item fade-in fade-in-delay-2" data-category="landscape">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Mountain" loading="lazy" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">MUSHISHI LAND</div>
+              <span class="az-tag">LANDSCAPE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-gallery-item fade-in" data-category="romance">
+          <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&q=80" alt="Romance2" loading="lazy" style="height:300px; object-fit:cover;" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">CLANNAD</div>
+              <span class="az-tag">ROMANCE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-gallery-item fade-in fade-in-delay-1" data-category="action">
+          <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&q=80" alt="Fighter" loading="lazy" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">JUJUTSU KAISEN</div>
+              <span class="az-tag">ACTION</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-gallery-item fade-in fade-in-delay-2" data-category="fantasy">
+          <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&q=80" alt="Stars" loading="lazy" style="height:260px; object-fit:cover;" />
+          <div class="az-gallery-overlay">
+            <div>
+              <div class="az-gallery-caption">FRIEREN</div>
+              <span class="az-tag">FANTASY</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="az-lightbox" id="az-lightbox">
+    <button class="az-lightbox-close" id="az-lightbox-close">
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <img class="az-lightbox-img" id="az-lightbox-img" src="" alt="Preview" />
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="az-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="az-footer-brand">ANIME<span>ZONE</span></div>
+          <p class="az-footer-desc">Portal hiburan anime dan manga terlengkap di Indonesia.</p>
+          <div class="az-footer-social">
+            <a href="#" class="az-social-link"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="az-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="az-social-link"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="az-social-link"><i class="bi bi-discord"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <span class="az-footer-heading">NAVIGASI</span>
+          <ul class="az-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="musik.html">Musik</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="ebook.html">Ebook</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="az-footer-bottom">
+        <span class="az-footer-copy">© 2024 ANIMEZONE — ALL RIGHTS RESERVED</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
