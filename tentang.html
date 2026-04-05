@@ -276,25 +276,67 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-7 fade-in fade-in-delay-1">
-          <div style="background:var(--gray-900); border:1px solid var(--gray-800); padding:2rem;">
-            <div class="mb-3">
-              <label style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:3px; color:var(--gray-400); display:block; margin-bottom:0.5rem;">NAMA</label>
-              <input type="text" placeholder="Nama lengkap kamu" style="width:100%; background:var(--gray-800); border:1px solid var(--gray-700); color:var(--white); padding:12px 16px; font-size:0.9rem; outline:none; transition:border-color 0.25s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor=''" />
-            </div>
-            <div class="mb-3">
-              <label style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:3px; color:var(--gray-400); display:block; margin-bottom:0.5rem;">EMAIL</label>
-              <input type="email" placeholder="email@kamu.com" style="width:100%; background:var(--gray-800); border:1px solid var(--gray-700); color:var(--white); padding:12px 16px; font-size:0.9rem; outline:none; transition:border-color 0.25s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor=''" />
-            </div>
-            <div class="mb-4">
-              <label style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:3px; color:var(--gray-400); display:block; margin-bottom:0.5rem;">PESAN</label>
-              <textarea rows="5" placeholder="Tuliskan pesan kamu..." style="width:100%; background:var(--gray-800); border:1px solid var(--gray-700); color:var(--white); padding:12px 16px; font-size:0.9rem; outline:none; resize:vertical; transition:border-color 0.25s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor=''"></textarea>
-            </div>
-            <button class="az-btn-primary w-100" onclick="sendMessage(this)">
-              <i class="bi bi-send"></i> KIRIM PESAN
-            </button>
-          </div>
-        </div>
+       <div class="col-lg-7 fade-in fade-in-delay-1">
+  <form action="https://formspree.io/f/xojppnzj" method="POST" 
+        style="background:var(--gray-900); border:1px solid var(--gray-800); padding:2rem;">
+
+    <div class="mb-3">
+      <label style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:3px; color:var(--gray-400); display:block; margin-bottom:0.5rem;">
+        NAMA
+      </label>
+      <input 
+        type="text" 
+        name="name"
+        placeholder="Nama lengkap kamu" 
+        required
+        style="width:100%; background:var(--gray-800); border:1px solid var(--gray-700); color:var(--white); padding:12px 16px; font-size:0.9rem; outline:none; transition:border-color 0.25s;"
+        onfocus="this.style.borderColor='var(--accent)'" 
+        onblur="this.style.borderColor=''" 
+      />
+    </div>
+
+    <div class="mb-3">
+      <label style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:3px; color:var(--gray-400); display:block; margin-bottom:0.5rem;">
+        EMAIL
+      </label>
+      <input 
+        type="email" 
+        name="email"
+        placeholder="email@kamu.com" 
+        required
+        style="width:100%; background:var(--gray-800); border:1px solid var(--gray-700); color:var(--white); padding:12px 16px; font-size:0.9rem; outline:none; transition:border-color 0.25s;"
+        onfocus="this.style.borderColor='var(--accent)'" 
+        onblur="this.style.borderColor=''" 
+      />
+    </div>
+
+    <div class="mb-4">
+      <label style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:3px; color:var(--gray-400); display:block; margin-bottom:0.5rem;">
+        PESAN
+      </label>
+      <textarea 
+        name="message"
+        rows="5" 
+        placeholder="Tuliskan pesan kamu..." 
+        required
+        style="width:100%; background:var(--gray-800); border:1px solid var(--gray-700); color:var(--white); padding:12px 16px; font-size:0.9rem; outline:none; resize:vertical; transition:border-color 0.25s;"
+        onfocus="this.style.borderColor='var(--accent)'" 
+        onblur="this.style.borderColor=''">
+      </textarea>
+    </div>
+
+    <!-- Anti spam -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <!-- Redirect setelah kirim -->
+    <input type="hidden" name="_redirect" value="https://example.com/thanks.html">
+
+    <button type="submit" class="az-btn-primary w-100">
+      <i class="bi bi-send"></i> KIRIM PESAN
+    </button>
+
+  </form>
+ </div>
       </div>
     </div>
   </section>
